@@ -82,17 +82,6 @@ if __name__ == '__main__':
 
     pretty_print = args.pretty_print
     token = waas_api_login(email, password)
-    # if len(sys.argv) >= 4:
-    #     email = sys.argv[1]
-    #     password = sys.argv[2]
-    #     app1name = sys.argv[3]
-    # else:
-    #     email = input("Enter user email:")
-    #     password = getpass("Enter user password:")
-    #     app1name = input("Enter name of first WaaS app to compare:")
-
-    # print("App1: " + app1name)
-    # Show list of applications, and servers for each application
     apps = waas_api_get(token, 'applications')
 
     # Verify that each of these apps is present
@@ -102,7 +91,6 @@ if __name__ == '__main__':
     else:
         sys.exit("App1 (" + app1name + ") not found")
 
-    # print("App id found: {}".format(app1))
     app1data = waas_api_get(token, "applications/" + str(app1) + "/")
 
     if pretty_print:
