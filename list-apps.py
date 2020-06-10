@@ -31,6 +31,6 @@ if __name__ == '__main__':
     # Show list of applications, and servers for each application
     apps = waas_api_get(token, 'applications')
     for app in apps['results']:
-        print("Application: {}".format(app['name']))
+        print("Application: {} ({})".format(app['name'], app['id']))
         for server in app['servers']:
             print("\tServer: {} ({} {}:{})".format(server['name'], server['protocol'], server['host'], server['port']))

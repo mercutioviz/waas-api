@@ -83,6 +83,8 @@ if __name__ == '__main__':
     app1data = waas_api_get(token, "applications/" + str(app1) + "/")
     #print(json.dumps(app1data, indent=2))
     for item in config_items:
+        # if item != 'ip_reputation':
+        #     continue
         config_data = waas_api_get(token, "applications/" + str(app1) + "/" + item + '/')
         if config_data:
             print("Config info for " + item + ':')
@@ -92,3 +94,5 @@ if __name__ == '__main__':
             print("No config info for " + item)
             print()
 
+    comp1data = waas_api_get(token, "applications/" + str(app1) + "/components/")
+    print(json.dumps(comp1data,indent=2))

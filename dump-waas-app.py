@@ -97,3 +97,11 @@ if __name__ == '__main__':
         print(json.dumps(app1data, indent=2))
     else:
         print(json.dumps(app1data))
+
+    comp1data = waas_api_get(token, "applications/" + str(app1) + "/components/")
+
+    if pretty_print:
+        print(json.dumps(comp1data, indent=2))
+    else:
+        print(json.dumps(comp1data))
+
